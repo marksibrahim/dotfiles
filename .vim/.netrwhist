@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/mark/Dropbox/Math'
+let g:netrw_dirhist_2='/Users/mark/Dropbox/Math/Abstract_Algebra'
+let g:netrw_dirhist_3='/Users/mark/Dropbox/Math/Abstract_Algebra/Algebra_I'
+let g:netrw_dirhist_4='/Users/mark/Dropbox/Math/Teaching/Calc_II/calc_II'
+let g:netrw_dirhist_5='/Users/mark/Dropbox/Math/Real_Analysis/Analysis_II'
+let g:netrw_dirhist_6='/Users/mark/Dropbox/Math/Real_Analysis'
+let g:netrw_dirhist_7='/Users/mark/Dropbox/Math/Real_Analysis/Analysis_I'

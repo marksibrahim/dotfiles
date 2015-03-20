@@ -1,0 +1,30 @@
+# .bash_profile
+# Get the aliases and functions
+source ~/.bashrc
+
+#adds directory to title bar of iterm
+if [ $ITERM_SESSION_ID ]; then
+  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"';
+fi
+#path
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+#vacc shortcut
+alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
+
+#useful 
+alias cpwd="pwd | tr -d '\n' | pbcopy" #copy current working directory
+alias lf="ls -AlFGh"
+
+
+
+#virtualenv for wrapper
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+#color of prompt 
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+
+
+
