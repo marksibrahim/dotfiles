@@ -4,7 +4,8 @@ set nocompatible "use vim, without old vi settings
 execute pathogen#infect()
 
 set mouse=a "mouse in iterm
-runtime macros/matchit.vim "matchit plugin
+runtime macros/matchit.vim 
+"matchit plugin
 "matches more than (, [, etc.
 
 "remap escape key
@@ -48,7 +49,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/
 set cole=2 "replaces symbol with latex name: >= instead of \leq
 "called conceal
 let g:tex_flavor = "latex" "syntax highliting
-command L execute "silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
+command L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
 command LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 
 "latex macros
