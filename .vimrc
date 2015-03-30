@@ -2,7 +2,7 @@
 set nocompatible 
 "use vim, without old vi settings
 "pathogen for plugins, all in bundle folder
-execute pathogen#infect('bundle/{}', '~/.vim/bundle/{}')
+execute pathogen#infect()
 
 set mouse=a "mouse in iterm
 runtime macros/matchit.vim 
@@ -51,14 +51,18 @@ set cole=2 "replaces symbol with latex name: >= instead of \leq
 "called conceal
 let g:tex_flavor = "latex" "syntax highliting
 command! L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
+command! LX execute "silent w | silent !xelatex % && open -a texshop %:r.pdf" | silent redraw!
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 "! after command overrides default command
+"latex template
+function! LatexTemplate()
+    "inserts text of template file
+     r ~/Dropbox/Math/Latex/mark_template.tex
+endfunction
+command! LT call LatexTemplate()
 
-"latex macros
-let @b = 'i\fbox{\parbox{0.8\textwidth}{'
 
-"vimroom, for writing
-"
+
 "ctrl p (for file navigation) (:Nerdtree)
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>' "map command to ctrl-p
