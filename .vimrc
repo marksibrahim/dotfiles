@@ -41,7 +41,8 @@ set ignorecase
 set smartcase "search becomes case sensitive if it contains capital letter
 set incsearch "show search matches as you type
 set hlsearch "highlights search matches
-nnoremap <CR> :noh<CR><CR> "deletes searches after pressing entering command mode
+nnoremap <CR> :noh<CR><CR> 
+"deletes searches after pressing entering command mode
 
 "vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/Notes/wiki_html/'}]
@@ -81,3 +82,23 @@ let g:airline_powerline_fonts = 1
 
 "sync site
 command! S execute "!rsync -r -v ~/Dropbox/Math/Teaching/Calc_II/calc_II/ /Volumes/public_html/calc_II"
+
+"handle large files 
+" file is large from 100mb
+let g:LargeFile = 1024 * 1024 * 100
+augroup LargeFile 
+ autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+augroup END
+
+function LargeFile()
+ " no syntax highlighting etc
+ set eventignore+=FileType
+ " save memory when other file is viewed
+ setlocal bufhidden=unload
+ " is read-only (write with :w new_filename)
+ setlocal buftype=nowrite
+ " no undo possible
+ setlocal undolevels=-1
+ " display message
+ autocmd VimEnter *  echo "The file is larger than " . (g:LargeFile / 1024 / 1024) . " MB, so some options are changed (see .vimrc for details)."
+endfunction"
