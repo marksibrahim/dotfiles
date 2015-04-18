@@ -55,12 +55,19 @@ command! L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf
 command! LX execute "silent w | silent !xelatex % && open -a texshop %:r.pdf" | silent redraw!
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 "! after command overrides default command
+
+"speed
+autocmd FileType tex :NoMatchParen
+au FileType tex setlocal norelativenumber
+"if really slow: au FileType tex setlocal nocursorline
+
 "latex template
 function! LatexTemplate()
     "inserts text of template file
      r ~/Dropbox/Math/Latex/mark_template.tex
 endfunction
 command! LT call LatexTemplate()
+
 
 
 
@@ -83,22 +90,3 @@ let g:airline_powerline_fonts = 1
 "sync site
 command! S execute "!rsync -r -v ~/Dropbox/Math/Teaching/Calc_II/calc_II/ /Volumes/public_html/calc_II"
 
-"handle large files 
-" file is large from 100mb
-let g:LargeFile = 1024 * 1024 * 100
-augroup LargeFile 
- autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
-augroup END
-
-function LargeFile()
- " no syntax highlighting etc
- set eventignore+=FileType
- " save memory when other file is viewed
- setlocal bufhidden=unload
- " is read-only (write with :w new_filename)
- setlocal buftype=nowrite
- " no undo possible
- setlocal undolevels=-1
- " display message
- autocmd VimEnter *  echo "The file is larger than " . (g:LargeFile / 1024 / 1024) . " MB, so some options are changed (see .vimrc for details)."
-endfunction"
