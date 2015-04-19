@@ -51,7 +51,9 @@ let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/
 set cole=2 "replaces symbol with latex name: >= instead of \leq
 "called conceal
 let g:tex_flavor = "latex" "syntax highliting
-command! L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
+"command! L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
+command! L execute "silent w | Latexmk"
+map <c-l> :L <CR>
 command! LX execute "silent w | silent !xelatex % && open -a texshop %:r.pdf" | silent redraw!
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 "! after command overrides default command
