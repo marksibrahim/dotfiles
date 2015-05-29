@@ -62,7 +62,7 @@ command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 "speed
 autocmd FileType tex :NoMatchParen
 au FileType tex setlocal norelativenumber
-"if really slow: au FileType tex setlocal nocursorline
+au FileType tex setlocal nocursorline
 
 "latex template
 function! LatexTemplate()

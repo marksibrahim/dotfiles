@@ -18,13 +18,23 @@ alias lf="ls -AlFGh"
 
 
 
+
 #virtualenv for wrapper
 export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 
+##PROMOPT
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 #color of prompt 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$"
 
-
+#git completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+    fi
 
 
