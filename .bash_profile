@@ -30,7 +30,7 @@ parse_git_branch() {
 }
 
 #color of prompt 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[m\]\$(parse_git_branch)\$ "
 
 #git completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
