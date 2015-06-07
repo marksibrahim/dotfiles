@@ -1,6 +1,7 @@
 
 set nocompatible 
 "use vim, without old vi settings
+"
 "pathogen for plugins, all in bundle folder
 execute pathogen#infect()
 
@@ -47,7 +48,8 @@ nnoremap <CR> :noh<CR><CR>
 "vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/Notes/wiki_html/'}]
 
-"latex
+
+"====================================LATEX===================================
 set cole=2 "replaces symbol with latex name: >= instead of \leq
 "called conceal
 let g:tex_flavor = "latex" "syntax highliting
@@ -59,10 +61,6 @@ command! LX execute "silent w | silent !xelatex % && open -a texshop %:r.pdf" | 
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 "! after command overrides default command
 
-"speed
-autocmd FileType tex :NoMatchParen
-au FileType tex setlocal norelativenumber
-au FileType tex setlocal nocursorline
 
 "latex template
 function! LatexTemplate()
@@ -71,8 +69,14 @@ function! LatexTemplate()
 endfunction
 command! LT call LatexTemplate()
 
+"speed
+autocmd FileType tex :NoMatchParen
+au FileType tex setlocal norelativenumber
+au FileType tex setlocal nocursorline
+"===============================================================================
 
 
+"===============================FILE NAV========================================
 
 "ctrl p (for file navigation) (:Nerdtree)
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -85,6 +89,8 @@ let g:netrw_liststyle=3 " changes Explore style to match Nerdtree
 let NERDTreeQuitOnOpen = 1 "close nerdtree after opening file
 command! NE NERDTree
 
+"==============================================================================
+
 "airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1 "shows open buffers
@@ -92,4 +98,45 @@ let g:airline_powerline_fonts = 1
 
 "sync site
 command! S execute "!rsync -r -v ~/Dropbox/Math/Teaching/Calc_II/calc_II/ /Volumes/public_html/calc_II"
+
+
+
+"=================================Word Processor Mode ===================
+func! WritingMode() 
+  setlocal spell spelllang=en_us 
+  set gfn=Cousine:h14                " font to use
+  set lines=40 columns=100           " size of the editable area
+  set guioptions-=r                  " remove right scrollbar
+  set laststatus=0                   " don't show status line
+  set noruler                        " don't show ruler
+  set fullscreen                     " go to fullscreen editing mode
+  set linebreak                      " break the lines on words
+endfu 
+com! WM call WritingMode()
+
+nnoremap <silent> <leader>WT :Goyo<cr>
+
+function! s:goyo_enter()
+    set nocursorline "delete cursor line
+    "for Quitting
+    let b:quitting = 0
+    let b:quitting_bang = 0
+    autocmd QuitPre <buffer> let b:quitting = 1
+    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+    "end of Quitting
+    set spell spelllang=en_us
+endfunction
+
+function! s:goyo_leave()
+    if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        if b:quitting_bang
+          qa!
+        else
+          qa
+        endif
+      endif
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
