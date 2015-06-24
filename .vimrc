@@ -18,9 +18,14 @@ syntax on "synatx highlighting
 set number "displays line number
 set cursorline "highlight current line
 
-let g:solarized_termtrans = 1 "iterm fix
-colorscheme solarized
-set background=dark
+if $TERM_PROGRAM =~ "Terminal"
+"if mac terminal, choose plain colorscheme
+    colorscheme pencil
+else
+    let g:solarized_termtrans = 1 "iterm fix
+    colorscheme solarized
+    set background=dark
+endif
 set guifont=Monaco:h13
 
 " Change cursor shape between insert and normal mode in iTerm2.app
@@ -125,6 +130,10 @@ function! s:goyo_enter()
     cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
     "end of Quitting
     set spell spelllang=en_us
+    colorscheme pencil
+    let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
+    set background=light
+    set guifont=Source Code Pro for Powerline
 endfunction
 
 function! s:goyo_leave()

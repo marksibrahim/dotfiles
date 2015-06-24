@@ -37,4 +37,11 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
     fi
 
+#public internet id changer
+function remac {
+    sudo /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -z
+    sudo ifconfig en0 ether $(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+    sudo networksetup -detectnewhardware
+    echo $(ifconfig en0 | grep ether)
+}
 
