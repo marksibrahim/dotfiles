@@ -37,6 +37,8 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
     fi
 
+#Serve Jekyll Blog
+alias serve_blog="jekyll serve --baseurl ''"
 #public internet id changer
 function remac {
     sudo /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -z
