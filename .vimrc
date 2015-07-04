@@ -134,6 +134,8 @@ function! s:goyo_enter()
     let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
     set background=light
     set guifont=Source Code Pro for Powerline
+    map j gj
+    map k gk
 endfunction
 
 function! s:goyo_leave()
