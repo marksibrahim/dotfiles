@@ -53,6 +53,9 @@ nnoremap <CR> :noh<CR><CR>
 "vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/Notes/wiki_html/'}]
 
+"vim notes plugin
+let g:notes_directories = ['~/Dropbox/Notes/vim_notes']
+nnoremap <silent> <leader>t :Note Contents<cr>
 
 "====================================LATEX===================================
 set cole=2 "replaces symbol with latex name: >= instead of \leq
