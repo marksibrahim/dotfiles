@@ -17,16 +17,16 @@ set autochdir "set working directory as that of current file
 syntax on "synatx highlighting
 set number "displays line number
 set cursorline "highlight current line
+set guifont=Droid_Sans_Mono_for_Powerline:h13
 
 if $TERM_PROGRAM =~ "Terminal"
-"if mac terminal, choose plain colorscheme
+"if mac terminal, choose light colorscheme
     colorscheme pencil
 else
     let g:solarized_termtrans = 1 "iterm fix
     colorscheme solarized
     set background=dark
 endif
-set guifont=Monaco:h13
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
@@ -55,7 +55,14 @@ let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/
 
 "vim notes plugin
 let g:notes_directories = ['~/Dropbox/Notes/vim_notes']
-nnoremap <silent> <leader>t :Note Contents<cr>
+function! Notes()
+    colorscheme pencil
+    let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
+    set background=light
+    set spell spelllang=en_us
+    :Note Contents
+endfunction
+nnoremap <silent> <leader>t :call Notes()<cr>
 
 "====================================LATEX===================================
 set cole=2 "replaces symbol with latex name: >= instead of \leq
@@ -109,20 +116,8 @@ command! S execute "!rsync -r -v ~/Dropbox/Math/Teaching/Calc_II/calc_II/ /Volum
 
 
 
-"=================================Word Processor Mode ===================
-func! WritingMode() 
-  setlocal spell spelllang=en_us 
-  set gfn=Cousine:h14                " font to use
-  set lines=40 columns=100           " size of the editable area
-  set guioptions-=r                  " remove right scrollbar
-  set laststatus=0                   " don't show status line
-  set noruler                        " don't show ruler
-  set fullscreen                     " go to fullscreen editing mode
-  set linebreak                      " break the lines on words
-endfu 
-com! WM call WritingMode()
+"=================================Writing Mode ===================
 
-nnoremap <silent> <leader>WT :Goyo<cr>
 
 function! s:goyo_enter()
     set nocursorline "delete cursor line
@@ -136,7 +131,6 @@ function! s:goyo_enter()
     colorscheme pencil
     let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
     set background=light
-    set guifont=Source Code Pro for Powerline
     map j gj
     map k gk
 endfunction
@@ -154,3 +148,4 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+nnoremap <silent> <leader>WT :Goyo<cr>
