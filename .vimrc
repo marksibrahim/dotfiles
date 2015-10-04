@@ -69,9 +69,17 @@ set cole=2 "replaces symbol with latex name: >= instead of \leq
 "called conceal
 let g:tex_flavor = "latex" "syntax highliting
 "command! L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
-command! L execute "silent w | Latexmk"
+command! L execute "call Latexcompile()"
 map! <c-l> <Esc> :L <CR>
 map <c-l> <Esc> :L <CR>
+
+"latexmk for compliation + clean .aux, .log files
+function Latexcompile()
+    silent w
+    Latexmk
+    LatexmkClean
+endfunction
+
 command! LX execute "silent w | silent !xelatex % && open -a texshop %:r.pdf" | silent redraw!
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
 "! after command overrides default command
