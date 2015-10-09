@@ -69,6 +69,18 @@ set cole=2 "replaces symbol with latex name: >= instead of \leq
 "called conceal
 let g:tex_flavor = "latex" "syntax highliting
 "command! L execute "silent w | silent !rubber --pdf % && open -a texshop %:r.pdf" | silent redraw!
+
+"cursor jumps to error line
+let g:LatexBox_autojump = 1
+"cursor doesn't jump to error window
+let g:LatexBox_quickfix = 2
+
+"latex folding
+let g:LatexBox_Folding = 1
+
+"stop processing after error
+let g:LatexBox_latexmk_options = "-halt-on-error"
+
 command! L execute "call Latexcompile()"
 map! <c-l> <Esc> :L <CR>
 map <c-l> <Esc> :L <CR>
@@ -77,7 +89,10 @@ map <c-l> <Esc> :L <CR>
 function Latexcompile()
     silent w
     Latexmk
-    LatexmkClean
+    "clean aux, div files if no compilation error
+    if v:shell_error == 0
+        LatexmkClean
+    endif
 endfunction
 
 command! LX execute "silent w | silent !xelatex % && open -a texshop %:r.pdf" | silent redraw!
