@@ -50,6 +50,10 @@ set hlsearch "highlights search matches
 nnoremap <CR> :noh<CR><CR> 
 "deletes searches after pressing entering command mode
 
+set wildmenu "visual autocomplete for command menu, like :e filename<TAB>
+
+
+"====================================NOTES===================================
 "vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Notes/wiki/', 'path_html': '~/Dropbox/Notes/wiki_html/'}]
 
@@ -74,6 +78,8 @@ let g:tex_flavor = "latex" "syntax highliting
 let g:LatexBox_autojump = 1
 "cursor doesn't jump to error window
 let g:LatexBox_quickfix = 2
+"don't show specified warnings
+let g:LatexBox_ignore_warnings = ['I moved some lines to the next page.', 'Underfull']
 
 "latex folding
 let g:LatexBox_Folding = 1
@@ -116,14 +122,15 @@ au FileType tex setlocal nocursorline
 
 "===============================FILE NAV========================================
 
-"ctrl p (for file navigation) (:Nerdtree)
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"CtrlP (for file navigation) (:Nerdtree)
 let g:ctrlp_map = '<c-p>' "map command to ctrl-p
 let g:ctrlp_cmd = 'CtrlP'
-"let g:ctrlp_working_path_mode = 'c' "changes to directory of file
+let g:ctrlp_match_window = 'bottom,order:ttb' "order top to bottom 
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0 "respect directory changes
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' "for speed
 
 let g:netrw_liststyle=3 " changes Explore style to match Nerdtree
-
 let NERDTreeQuitOnOpen = 1 "close nerdtree after opening file
 command! NE NERDTree
 

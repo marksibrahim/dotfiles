@@ -15,6 +15,7 @@ alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
 #useful 
 alias cpwd="pwd | tr -d '\n' | pbcopy" #copy current working directory
 alias lf="ls -AlFGh"
+alias rm="rm -i" #ask for confirmation before rm
 
 
 
