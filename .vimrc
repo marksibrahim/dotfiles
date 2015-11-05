@@ -19,10 +19,6 @@ set number "displays line number
 set cursorline "highlight current line
 set guifont=Droid_Sans_Mono_for_Powerline:h13
 
-" error bar color for syntax checking 
-    " ensures color is same as line number column
-hi! link SignColumn LineNr 
-
 if $TERM_PROGRAM =~ "Terminal"
 "if mac terminal, choose light colorscheme
     colorscheme pencil
