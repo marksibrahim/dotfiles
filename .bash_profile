@@ -17,6 +17,8 @@ alias cpwd="pwd | tr -d '\n' | pbcopy" #copy current working directory
 alias lf="ls -AlFGh"
 alias rm="rm -i" #ask for confirmation before rm
 
+#alias vim to use MacVim's faster rendering engine
+alias vim="mvim -v"
 
 
 

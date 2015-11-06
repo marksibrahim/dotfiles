@@ -13,9 +13,15 @@ runtime macros/matchit.vim
 imap kj <Esc>
 set autochdir "set working directory as that of current file
 
+"speed
+set lazyredraw
+set ttyfast
+
+
 "look
 syntax on "synatx highlighting
 set number "displays line number
+set relativenumber "and line number relative to current line
 set cursorline "highlight current line
 set guifont=Droid_Sans_Mono_for_Powerline:h13
 
