@@ -20,14 +20,11 @@ alias rm="rm -i" #ask for confirmation before rm
 #alias vim to use MacVim's faster rendering engine
 alias vim="mvim -v"
 
-
-
 #virtualenv for wrapper
 export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 
-##PROMOPT
-
+##PROMPT
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }

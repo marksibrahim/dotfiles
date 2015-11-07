@@ -17,7 +17,6 @@ set autochdir "set working directory as that of current file
 set lazyredraw
 set ttyfast
 
-
 "look
 syntax on "synatx highlighting
 set number "displays line number
