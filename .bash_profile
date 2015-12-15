@@ -21,7 +21,9 @@ parse_git_branch() {
 }
 
 #color of prompt 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[30;2m\]\$(parse_git_branch)\[\033[m\] \$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[32;1m\]\$(parse_git_branch)\[\033[m\] \$ "
+
+#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[30;2m\]\$(parse_git_branch)\[\033[m\] \$ "
 
 #adds directory to title bar of iterm
 if [ $ITERM_SESSION_ID ]; then
@@ -37,4 +39,9 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 #Homebrew installs applications in usr/local/bin
 	#tell OS to use programs in this directory
 export PATH=/usr/local/bin:$PATH
+
+#Set Vi Mode
+set -o vi
+# "+" while in insert-mode; ":" command mode
+set show-mode-in-prompt on 
 
