@@ -1,18 +1,15 @@
-" Use more modern Vim settings instead of vi
-set nocompatible
-set mouse=a "Use mouse in iTerm
-set history=100 "save last 100 commands
+set nocompatible " Use more modern Vim settings instead of vi
+filetype off " required for Vundle plugin manager
 
-inoremap kj <esc>
 
 "===========================Vundle=========================
-filetype off " required for Vundle (plugin manager)
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " Vundle manages updates for Vundle
 
 Plugin 'https://github.com/rking/ag.vim' " Program for fast file searching; powers Ctrl-P
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
+Plugin 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
 Plugin 'https://github.com/tpope/vim-fugitive' " git interface
 
 Plugin 'https://github.com/ervandew/supertab' " autocompletion with tab
@@ -80,6 +77,23 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' "for speed
 
 set wildmenu "visual autocomplete for command menu, like :e filename<TAB>
 
+"===========================Latex=========================
+" compile
+" explanation: 
+"       silent: prevents need to hit enter
+"       --file-line-error: nicer error output
+"       -output-directory=trash : puts aux, log files in trash
+"       redraw! : redraws screen (must be outside of quotes to work)
+command! L execute "silent w | silent !pdflatex --file-line-error -output-directory=/Users/mark/.Trash %" | redraw!
+
+" insert mode mapping
+map! <c-l> :L <CR> 
+ " normal mode mapping
+map <c-l>  :L <CR>
+" open file
+command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
+
+
 "===========================Writing in Vim=========================
 let g:notes_directories = ['~/Dropbox/Notes/vim_notes']
 function! Notes()
@@ -88,3 +102,8 @@ function! Notes()
 endfunction
 nnoremap <silent> <leader>t :call Notes()<cr>
 
+"===========================Other=========================
+set mouse=a " Use mouse in iTerm
+set history=100 " save last 100 commands
+
+inoremap kj <esc>

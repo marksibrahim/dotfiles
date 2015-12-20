@@ -40,8 +40,4 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 	#tell OS to use programs in this directory
 export PATH=/usr/local/bin:$PATH
 
-#Set Vi Mode
-set -o vi
-# "+" while in insert-mode; ":" command mode
-set show-mode-in-prompt on 
 
