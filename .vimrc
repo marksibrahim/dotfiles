@@ -81,10 +81,10 @@ set wildmenu "visual autocomplete for command menu, like :e filename<TAB>
 " compile
 " explanation: 
 "       silent: prevents need to hit enter
-"       --file-line-error: nicer error output
-"       -output-directory=trash : puts aux, log files in trash
 "       redraw! : redraws screen (must be outside of quotes to work)
-command! L execute "silent w | silent !pdflatex --file-line-error -output-directory=/Users/mark/.Trash %" | redraw!
+"       latexmk: tool for compilation (as many times as necessary to resolve
+"       bib tex conflicts
+command! L execute "silent w | silent !latexmk -xelatex %" | execute "silent !latexmk -c %" | redraw!
 
 " insert mode mapping
 map! <c-l> :L <CR> 
