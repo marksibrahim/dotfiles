@@ -24,8 +24,8 @@ Plugin 'https://github.com/jszakmeister/vim-togglecursor' " change cursor shape 
 Plugin 'https://github.com/xolox/vim-misc' " Required by Vim Notes (below)
 Plugin 'https://github.com/xolox/vim-notes' " Note Taking
 
-Plugin 'https://github.com/kana/vim-textobj-user' " custom text-objects
-Plugin 'https://github.com/rbonvall/vim-textobj-latex' " latex text-objects
+Plugin 'https://github.com/LaTeX-Box-Team/LaTeX-Box' " Latex 
+
 
 " Brief help
     " :PluginList          - list configured plugins
@@ -95,6 +95,9 @@ map! <c-l> :L <CR>
 map <c-l>  :L <CR>
 " open file
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
+
+" turn on Latex-Box folding
+let g:LatexBox_Folding = 1
 
 
 "===========================Writing in Vim=========================
