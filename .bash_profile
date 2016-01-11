@@ -3,17 +3,16 @@
 source ~/.bashrc
 
 #===========================ALIASES===============================
-#vacc shortcut
+# vacc shortcut
 alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
 
-#useful 
+# useful 
 alias cpwd="pwd | tr -d '\n' | pbcopy" #copy current working directory
 alias lf="ls -AlFGh"
 alias rm="rm -i" #ask for confirmation before rm
 
-#Serve Jekyll Blog
+# Serve Jekyll Blog
 alias serve_blog="jekyll serve --baseurl ''"
-
 
 #===========================PROMPT===============================
 parse_git_branch() {
@@ -40,4 +39,6 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 	#tell OS to use programs in this directory
 export PATH=/usr/local/bin:$PATH
 
-
+# virtual environment wrapper
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh

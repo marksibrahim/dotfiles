@@ -1,6 +1,6 @@
 set nocompatible " Use more modern Vim settings instead of vi
 filetype off " required for Vundle plugin manager
-
+set autochdir " set working to directory according to current file
 
 "===========================Vundle=========================
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
@@ -23,6 +23,9 @@ Plugin 'https://github.com/jszakmeister/vim-togglecursor' " change cursor shape 
 
 Plugin 'https://github.com/xolox/vim-misc' " Required by Vim Notes (below)
 Plugin 'https://github.com/xolox/vim-notes' " Note Taking
+
+Plugin 'https://github.com/kana/vim-textobj-user' " custom text-objects
+Plugin 'https://github.com/rbonvall/vim-textobj-latex' " latex text-objects
 
 " Brief help
     " :PluginList          - list configured plugins
