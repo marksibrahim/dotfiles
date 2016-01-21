@@ -93,8 +93,16 @@ command! L execute "silent w | silent !latexmk -xelatex %" | execute "silent !la
 map! <c-l> :L <CR> 
  " normal mode mapping
 map <c-l>  :L <CR>
+
 " open file
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
+
+" insert latex template
+function! LatexTemplate()
+    "inserts text of template file
+     r ~/Dropbox/Math/Latex/mark_template.tex
+endfunction
+command! LT call LatexTemplate()
 
 " turn on Latex-Box folding
 let g:LatexBox_Folding = 1
