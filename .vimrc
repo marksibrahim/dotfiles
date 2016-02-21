@@ -43,9 +43,10 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 
-set number "displays line number
-set relativenumber "and line number relative to current line
-set cursorline "highlight current line
+set number " displays line number
+set relativenumber " and line number relative to current line
+set cursorline " highlight current line
+set linebreak " displays words on the same line (no wrapping in middle of a word)  
 
 let g:airline#extensions#tabline#enabled = 1 " show buffers top bar
 let g:airline_powerline_fonts = 1 " use symbols for airline
@@ -90,7 +91,7 @@ set wildmenu "visual autocomplete for command menu, like :e filename<TAB>
 command! L execute "silent w | silent !latexmk -xelatex %" | execute "silent !latexmk -c %" | redraw!
 
 " insert mode mapping
-map! <c-l> :L <CR> 
+map! <c-l> <esc> :L <CR> 
  " normal mode mapping
 map <c-l>  :L <CR>
 
