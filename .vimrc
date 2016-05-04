@@ -1,3 +1,7 @@
+" to load vimrc: 
+    " don't use source ~/.vimrc, because bash can't parse a vimrc   
+    " instead use :source ~/.vimrc within vim
+    
 set nocompatible " Use more modern Vim settings instead of vi
 filetype off " required for Vundle plugin manager
 set autochdir " set working to directory according to current file
