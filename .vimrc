@@ -21,6 +21,7 @@ Plugin 'https://github.com/tpope/vim-surround' " surround tags, parenthesis etc.
 Plugin 'https://github.com/scrooloose/syntastic' " syntax checker
 Plugin 'https://github.com/tpope/vim-repeat' " extends what . repeats 
 
+Plugin 'https://github.com/reedes/vim-colors-pencil' " pencil color theme
 Plugin 'https://github.com/altercation/vim-colors-solarized' " Solarized colors
 Plugin 'https://github.com/bling/vim-airline' " nice status line at bottom of screen
 Plugin 'https://github.com/jszakmeister/vim-togglecursor' " change cursor shape in insert mode
@@ -116,6 +117,8 @@ let g:LatexBox_Folding = 1
 "===========================Writing in Vim=========================
 let g:notes_directories = ['~/Dropbox/Notes/vim_notes']
 function! Notes()
+    set colorscheme pencil
+    set background=light
     set spell spelllang=en_us
     :Note Contents
 endfunction
