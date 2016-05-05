@@ -47,6 +47,7 @@ syntax enable "Turn on syntax highlighting
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
+set guifont=Cousine\ for\ Powerline:h14 "nice font
 
 set number " displays line number
 set relativenumber " and line number relative to current line
@@ -117,7 +118,10 @@ let g:LatexBox_Folding = 1
 "===========================Writing in Vim=========================
 let g:notes_directories = ['~/Dropbox/Notes/vim_notes']
 function! Notes()
-    set colorscheme pencil
+    colorscheme pencil
+    let g:airline_theme = 'pencil' 
+    set laststatus=0 " get rid of bottom airline bar
+    set guifont=Source\ Code\ Pro\ Light:h14 "nice font
     set background=light
     set spell spelllang=en_us
     :Note Contents
