@@ -23,6 +23,7 @@ Plugin 'https://github.com/tpope/vim-repeat' " extends what . repeats
 
 Plugin 'https://github.com/reedes/vim-colors-pencil' " pencil color theme
 Plugin 'https://github.com/altercation/vim-colors-solarized' " Solarized colors
+Plugin 'derekwyatt/vim-scala' " for scala syntax highlighting
 Plugin 'https://github.com/bling/vim-airline' " nice status line at bottom of screen
 Plugin 'https://github.com/jszakmeister/vim-togglecursor' " change cursor shape in insert mode
 
@@ -124,6 +125,8 @@ function! Notes()
     set guifont=Source\ Code\ Pro\ Light:h14 "nice font
     set background=light
     set spell spelllang=en_us
+    map j gj
+    map k gk
     :Note Contents
 endfunction
 nnoremap <silent> <leader>t :call Notes()<cr>

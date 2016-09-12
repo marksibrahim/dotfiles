@@ -19,15 +19,16 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-#color of prompt 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[32;1m\]\$(parse_git_branch)\[\033[m\] \$ "
 
-#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[30;2m\]\$(parse_git_branch)\[\033[m\] \$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[32;1m\]\$(parse_git_branch)\[\033[m\] \$ "
+# shorterns path; requires Bash Version > 4.0 
+export PROMPT_DIRTRIM=3
 
 #adds directory to title bar of iterm
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"';
 fi
+
 
 #===========================OTHER===============================
 #git completion
@@ -42,3 +43,5 @@ export PATH=/usr/local/bin:$PATH
 # virtual environment wrapper
 export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh
+
+
