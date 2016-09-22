@@ -49,6 +49,7 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 set guifont=Cousine\ for\ Powerline:h14 "nice font
+set encoding=utf8
 
 set number " displays line number
 set relativenumber " and line number relative to current line
@@ -67,18 +68,37 @@ set lazyredraw " Redraw screen only when necessary for performance
 "===========================Editing=========================
 set showcmd "shows last command in bottom of screen
 
-"spaces and tabs
+" spaces and tabs
 set tabstop=4
 set shiftwidth=4 
 set expandtab " tabs are spaces
 set softtabstop=4 " backspace deletes 4 spaces
 set autoindent " copies indentation from previous line in new line
 
-"searching
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set ignorecase
 set smartcase " search becomes case sensitive if it contains capital letter
+" for multi-file search, use :Ag "word"
+
+" Syntax Errors (Syntastic Settings)
+" defaults recommended by plugin
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" Better :sign interface symbols
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
 
 "===========================Finding Files=========================
 let g:ctrlp_map = '<c-p>'
@@ -125,6 +145,7 @@ function! Notes()
     set guifont=Source\ Code\ Pro\ Light:h14 "nice font
     set background=light
     set spell spelllang=en_us
+    " j, k move up/down visual lines
     map j gj
     map k gk
     :Note Contents
