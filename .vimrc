@@ -15,6 +15,7 @@ Plugin 'https://github.com/rking/ag.vim' " Program for fast file searching; powe
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
 Plugin 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
 Plugin 'https://github.com/tpope/vim-fugitive' " git interface
+Plugin 'https://github.com/sjl/gundo.vim/' " Undo Tree
 
 Plugin 'https://github.com/ervandew/supertab' " autocompletion with tab
 Plugin 'https://github.com/tpope/vim-surround' " surround tags, parenthesis etc.
