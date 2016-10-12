@@ -26,6 +26,7 @@ Plugin 'https://github.com/reedes/vim-colors-pencil' " pencil color theme
 Plugin 'https://github.com/altercation/vim-colors-solarized' " Solarized colors
 Plugin 'derekwyatt/vim-scala' " for scala syntax highlighting
 Plugin 'https://github.com/bling/vim-airline' " nice status line at bottom of screen
+Plugin 'vim-airline/vim-airline-themes' " color themes for airline status line
 Plugin 'https://github.com/jszakmeister/vim-togglecursor' " change cursor shape in insert mode
 
 Plugin 'https://github.com/xolox/vim-misc' " Required by Vim Notes (below)
@@ -58,6 +59,7 @@ set cursorline " highlight current line
 set linebreak " displays words on the same line (no wrapping in middle of a word)  
 
 let g:airline#extensions#tabline#enabled = 1 " show buffers top bar
+let g:airline_theme='solarized' " sets airline to solarized theme
 let g:airline_powerline_fonts = 1 " use symbols for airline
 set laststatus=2 " airline appears all the time
 
