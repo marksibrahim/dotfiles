@@ -2,6 +2,13 @@
 # Get the aliases and functions
 source ~/.bashrc
 
+# Source .specifics (for machine specific configs) if it exists
+if [ -f ".specifics" ]; then
+    source ".specifics"
+else
+   echo "no machine specific bash configs to source"
+fi
+
 #===========================ALIASES===============================
 # vacc shortcut
 alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
