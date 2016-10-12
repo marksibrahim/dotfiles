@@ -16,6 +16,9 @@ Thumbs.db
 # Compiled C++ files
 *.out
 
+# VIM swap files
+*.swp
+
 # Application specific files
 venv
 node_modules
