@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bash_profile .vimrc .vim .gitignore"    # list of files/folders to symlink in homedir
+files=".bash_profile .vimrc .vim .gitignore_global"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,3 +29,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
+
+# Configure git to use gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+
