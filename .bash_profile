@@ -3,8 +3,8 @@
 source ~/.bashrc
 
 # Source .specifics (for machine specific configs) if it exists
-if [ -f ".specifics" ]; then
-    source ".specifics"
+if [ -f $HOME/.specifics ]; then
+    source $HOME/.specifics
 else
    echo "no machine specific bash configs to source"
 fi
