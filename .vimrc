@@ -33,6 +33,7 @@ Plugin 'https://github.com/xolox/vim-misc' " Required by Vim Notes (below)
 Plugin 'https://github.com/xolox/vim-notes' " Note Taking
 
 Plugin 'https://github.com/LaTeX-Box-Team/LaTeX-Box' " Latex 
+Plugin 'https://github.com/Valloric/MatchTagAlways' " Match HTML Tags
 
 
 " Brief help
