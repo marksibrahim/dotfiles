@@ -2,6 +2,13 @@
 # Get the aliases and functions
 source ~/.bashrc
 
+# Source .specifics (for machine specific configs) if it exists
+if [ -f $HOME/.specifics ]; then
+    source $HOME/.specifics
+else
+   echo "no machine specific bash configs to source"
+fi
+
 #===========================ALIASES===============================
 # vacc shortcut
 alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
@@ -30,6 +37,14 @@ if [ $ITERM_SESSION_ID ]; then
 fi
 
 
+#===========================PREVIEW MARKDOWN===============================
+# uses Pandoc and styles in github_md.css 
+# alias preview_md="pandoc -o md_preview.html --from markdown_github --to html -c ~/dotfiles/github_md.css README.md && open md_preview.html && sleep 2 && rm -f md_preview.html"
+
+preview_md() {
+    # $1 is argument specifying file to preview
+    pandoc -o md_preview.html --from markdown_github --to html -c ~/dotfiles/github_md.css $1 && open md_preview.html && sleep 2 && rm -f md_preview.html
+}
 #===========================OTHER===============================
 #git completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
