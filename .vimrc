@@ -108,7 +108,7 @@ let g:syntastic_warning_symbol = '!'
     " you can still check explicitly by running :SyntasticCheck
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "passive_filetypes": ["scala"] }
+    \ "passive_filetypes": ["scala", "html"] }
 
 "===========================Finding Files=========================
 let g:ctrlp_map = '<c-p>'
