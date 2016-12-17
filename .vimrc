@@ -103,6 +103,12 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
+" Disable checking for Scala (it's too slow)
+    " you can still check explicitly by running :SyntasticCheck
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["scala"] }
+
 "===========================Finding Files=========================
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
