@@ -1,6 +1,0 @@
-.vim/bundle/*
-.DS_store
-
-# vim swap files
-*.swp
-*.swo
