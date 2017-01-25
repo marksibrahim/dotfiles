@@ -79,6 +79,14 @@ set expandtab " tabs are spaces
 set softtabstop=4 " backspace deletes 4 spaces
 set autoindent " copies indentation from previous line in new line
 
+" set tabs to 2 spaces for yaml files
+    " only do this is VIM is compiled with autocmd feature
+if has("autocmd")
+    filetype on
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+endif
+
+
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
