@@ -17,6 +17,7 @@ alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
 alias cpwd="pwd | tr -d '\n' | pbcopy" #copy current working directory
 alias lf="ls -AlFGh"
 alias rm="rm -i" #ask for confirmation before rm
+alias path='echo -e \\t${PATH//:/\\n\\t}' #displays path in a nice format (from Bagrow/Andy)
 
 # Serve Jekyll Blog
 alias serve_blog="jekyll serve --baseurl ''"
