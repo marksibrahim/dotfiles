@@ -92,6 +92,12 @@ endif
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Split screen navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
