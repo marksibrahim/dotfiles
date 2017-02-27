@@ -143,9 +143,9 @@ set wildmenu "visual autocomplete for command menu, like :e filename<TAB>
 command! L execute "silent w | silent !latexmk -xelatex %" | execute "silent !latexmk -c %" | redraw!
 
 " insert mode mapping
-map! <c-l> <esc> :L <CR> 
+map! <C-M> <esc> :L <CR> 
  " normal mode mapping
-map <c-l>  :L <CR>
+map <C-M>  :L <CR>
 
 " open file
 command! LO execute "silent !open -a texshop %:r.pdf" | silent redraw!
