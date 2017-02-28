@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " Vundle manages updates for Vundle
 
 Plugin 'https://github.com/rking/ag.vim' " Program for fast file searching; powers Ctrl-P
-Plugin 'qpkorr/vim-bufkill' " Keeps split window when deleting buffer
+Plugin 'qpkorr/vim-bufkill' " Keeps split window when deleting buffer; use BD
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
 Plugin 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
 Plugin 'https://github.com/tpope/vim-fugitive' " git interface
