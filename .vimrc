@@ -16,7 +16,7 @@ Plugin 'qpkorr/vim-bufkill' " Keeps split window when deleting buffer; use BD
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
 Plugin 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
 Plugin 'https://github.com/tpope/vim-fugitive' " git interface
-Plugin 'https://github.com/sjl/gundo.vim/' " Undo Tree
+Plugin 'https://github.com/sjl/gundo.vim/' " Undo Tree, usage :UndotreeToggle
 
 Plugin 'https://github.com/ervandew/supertab' " autocompletion with tab
 Plugin 'https://github.com/tpope/vim-surround' " surround tags, parenthesis etc.
@@ -113,17 +113,13 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 " Better :sign interface symbols
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
-
-" Disable checking for Scala (it's too slow)
-    " you can still check explicitly by running :SyntasticCheck
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["scala", "html"] }
+" Disable automatic syntax checking. Run using :SyntasticCheck
+let g:syntastic_mode_map = {"mode": "passive"}
 
 "===========================Finding Files=========================
 let g:ctrlp_map = '<c-p>'
