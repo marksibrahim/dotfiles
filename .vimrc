@@ -92,6 +92,11 @@ endif
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Persistent Undo History
+    " even if you close the file!
+set undodir=~/.vim/undo/
+set undofile
+
 " Split screen navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
