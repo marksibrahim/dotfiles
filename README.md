@@ -10,3 +10,5 @@ makesymlinks:
 3. creates symbolic links to files in `~/dotfiles` 
 
 * when editing, change and commit the files in `~/dotfiles`
+
+- Also configures git to ignore directories/files in `.gitignore_global`
