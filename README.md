@@ -1,9 +1,8 @@
-# dotfiles
+# Setup a Machine
 setup dotfiles on a new machines by executing:
-
-    > $ sh maksymlinks.sh
-
-makesymlinks:
+```bash
+    > $ sh makesymlinks.sh
+```
 
 1. copies current dotfiles into `~/dotfiles_old`
 2. creates a `~/dotfiles` directory
