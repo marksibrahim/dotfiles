@@ -22,6 +22,9 @@ alias path='echo -e \\t${PATH//:/\\n\\t}' #displays path in a nice format (from 
 # Serve Jekyll Blog
 alias serve_blog="jekyll serve --baseurl ''"
 
+# open current directory in Intellij
+alias intellij="open -a /Applications/IntelliJ\ IDEA.app/ ."
+
 #===========================PROMPT===============================
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
