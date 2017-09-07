@@ -49,13 +49,27 @@ preview_md() {
     # $1 is argument specifying file to preview
     pandoc -o md_preview.html --from markdown_github --to html -c ~/dotfiles/github_md.css $1 && open md_preview.html && sleep 2 && rm -f md_preview.html
 }
-#===========================OTHER===============================
-#git completion
+
+
+#===========================COMPLETION===============================
+# git completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
     fi
 
-#Homebrew installs applications in usr/local/bin
+# inspired by http://mrzool.cc/writing/sensible-bash/
+bind "set completion-ignore-case on" # ignore case in completion
+bind "set completion-map-case on" # hyphens and underscores equivalent in completion
+bind "set show-all-if-ambiguous on" # show results con first <Tab>
+
+# Avoid duplicate entries in history
+HISTCONTROL="erasedups:ignoreboth"
+
+# Save multi-line commands as one command
+shopt -s cmdhist
+
+#===========================OTHER===============================
+# Homebrew installs applications in usr/local/bin
 	#tell OS to use programs in this directory
 export PATH=/usr/local/bin:$PATH
 
