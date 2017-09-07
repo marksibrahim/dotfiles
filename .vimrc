@@ -8,7 +8,7 @@ set autochdir " set working to directory according to current file
 
 "===========================Vundle=========================
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
-call vundle#begin()
+call vundle#begin('~/vim-plugins-vundle/') " set directory where plugins are installed
 Plugin 'VundleVim/Vundle.vim' " Vundle manages updates for Vundle
 
 Plugin 'https://github.com/rking/ag.vim' " Program for fast file searching; powers Ctrl-P
