@@ -18,7 +18,8 @@ Plugin 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
 Plugin 'https://github.com/tpope/vim-fugitive' " git interface
 Plugin 'https://github.com/sjl/gundo.vim/' " Undo Tree, usage :UndotreeToggle
 
-Plugin 'https://github.com/ervandew/supertab' " autocompletion with tab
+Plugin 'https://github.com/ervandew/supertab' " initiate autocompletion with tab
+Plugin 'https://github.com/davidhalter/jedi-vim.git' " jedi autocompletion for Python
 Plugin 'https://github.com/tpope/vim-surround' " surround tags, parenthesis etc.
 Plugin 'https://github.com/scrooloose/syntastic' " syntax checker
 Plugin 'https://github.com/tpope/vim-repeat' " extends what . repeats 
