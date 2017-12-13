@@ -4,12 +4,13 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.
-Plug 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
-Plug 'https://github.com/sheerun/vim-polyglot' "Syntax and indentation for most languages
+Plug 'scrooloose/nerdtree' " File Navigation Tree
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
+Plug 'mileszs/ack.vim' " Text search across files (grep-like). First $brew install ack
+Plug 'sheerun/vim-polyglot' "Syntax and indentation for most languages
 
-Plug 'https://github.com/altercation/vim-colors-solarized' " Solarized colors
-Plug 'https://github.com/bling/vim-airline' " nice status line at bottom of screen (and buffers)
+Plug 'altercation/vim-colors-solarized' " Solarized colors
+Plug 'bling/vim-airline' " nice status line at bottom of screen (and buffers)
 Plug 'vim-airline/vim-airline-themes' " color themes for airline status line
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -30,9 +31,32 @@ set number relativenumber
 " Remap espace to kj
 inoremap kj <esc>
 
-" Use ,, to switch between buffers
-nnoremap <leader><leader> :b#<CR>
+" Search is case sensitive only if it contains a capital letter
+set ignorecase
+set smartcase
 
+"===========================Multiple Files=========================
+" Search text across files using :Ack 'word'
+
+" Switch buffers using Tab (and Shift Tab)
+    " Remember Ctrl-P also can search buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <Tab> :bprevious<CR>
+
+" Split screen navigation
+    " Switch Windows (which are a view into a buffer)
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Switch buffers using Tab (and Shift Tab)
+    " Remember Ctrl-P also can search buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <Tab> :bprevious<CR>
+
+" Visual autocomplete for command menu, like :e filename<TAB>
+set wildmenu
 
 "===========================Visuals=========================
 colorscheme solarized
