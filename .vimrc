@@ -11,7 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and i
 call vundle#begin('~/vim-plugins-vundle/') " set directory where plugins are installed
 Plugin 'VundleVim/Vundle.vim' " Vundle manages updates for Vundle
 
-Pluging 'mileszs/ack.vim' " Text search across files
+Plugin 'mileszs/ack.vim' " Text search across files
 Plugin 'qpkorr/vim-bufkill' " Keeps split window when deleting buffer; use BD
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
 Plugin 'https://github.com/scrooloose/nerdtree' " File Navigation Tree
@@ -114,7 +114,9 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set ignorecase
 set smartcase " search becomes case sensitive if it contains capital letter
-" for multi-file search, use :Ack "word"
+
+" Search text across files <command-shift-f>, equivalent to :Ack 'word' 
+nmap <C-f> :Ack<space>
 
 " Syntax Errors (Syntastic Settings)
 " defaults recommended by plugin

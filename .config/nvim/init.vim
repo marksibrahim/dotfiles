@@ -1,4 +1,10 @@
 " neovim settings
+
+" link to Python
+" strangely you need to install neovim via pip2, pip3, and brew!
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 "===========================Plugins (via vim-plug)=========================
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
@@ -7,16 +13,20 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree' " File Navigation Tree
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
 Plug 'mileszs/ack.vim' " Text search across files (grep-like). First $brew install ack
-Plug 'sheerun/vim-polyglot' "Syntax and indentation for most languages
 
+Plug 'sheerun/vim-polyglot' "Syntax and indentation for most languages 
 Plug 'altercation/vim-colors-solarized' " Solarized colors
 Plug 'bling/vim-airline' " nice status line at bottom of screen (and buffers)
 Plug 'vim-airline/vim-airline-themes' " color themes for airline status line
 
+Plug 'Shougo/deoplete.nvim' " async autocompletion
+Plug 'ervandew/supertab' " activate autocompletion with <Tab>
+Plug 'w0rp/ale' " async linter supporting most languages
+
 " List ends here. Plugins become visible to Vim after this call.
 " Brief help
-    "  PlugInstall - install plugins listed above
-    "  PlugClean - delete plugins not listed above (reopen init.vim to updated)
+	"  PlugInstall - install plugins listed above
+	"  PlugClean - delete plugins not listed above (reopen init.vim to updated)
 call plug#end()
 
 "===========================Editing=========================
@@ -35,11 +45,21 @@ inoremap kj <esc>
 set ignorecase
 set smartcase
 
+" Spell-check Markdown files
+autocmd FileType markdown setlocal spell
+
+" Python linter configuration for ALE
+" disable PyLint
+let g:ale_linters = {
+\   'python': ['pylint'],
+\}
+
 "===========================Multiple Files=========================
-" Search text across files using :Ack 'word'
+" Search text across files <command-shift-f>, equivalent to :Ack 'word' 
+nmap <C-f> :Ack<space>
 
 " Switch buffers using Tab (and Shift Tab)
-    " Remember Ctrl-P also can search buffers
+	" Remember Ctrl-P also can search buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <Tab> :bprevious<CR>
 
@@ -49,11 +69,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Switch buffers using Tab (and Shift Tab)
-    " Remember Ctrl-P also can search buffers
-nnoremap <Tab> :bnext<CR>
-nnoremap <Tab> :bprevious<CR>
 
 " Visual autocomplete for command menu, like :e filename<TAB>
 set wildmenu
