@@ -31,7 +31,7 @@ parse_git_branch() {
 }
 
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[32;1m\]\$(parse_git_branch)\[\033[m\] \$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[32;1m\]\$(parse_git_branch)\[\033[m\] \n -\$ "
 # shorterns path; requires Bash Version > 4.0 
 export PROMPT_DIRTRIM=3
 
