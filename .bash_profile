@@ -26,12 +26,33 @@ alias serve_blog="jekyll serve --baseurl ''"
 alias intellij="open -a /Applications/IntelliJ\ IDEA.app/ ."
 
 #===========================PROMPT===============================
+COLOR_GREEN="\[\033[36m\]"
+COLOR_YELLOW="\[\033[32m\]"
+COLOR_BLUE="\[\033[34;2m\]"
+COLOR_GRAY="\[\033[32;1m\]"
+COLOR_NEUTRAL="\[\033[m\]"
+COLOR_RED="\[\033[0;31m\]"
+
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]happy:\[\033[34;2m\]\w\[\033[32;1m\]\$(parse_git_branch)\[\033[m\] \n -\$ "
+# add user
+PS1="$COLOR_GREEN\u$COLOR_NEUTRAL@"
+# add host
+PS1+="${COLOR_YELLOW}happy:"
+# add current directory
+PS1+="$COLOR_BLUE\w"
+# git branch
+PS1+="$COLOR_GRAY\$(parse_git_branch)"
+# git changes color
+PS1+=""
+# command prompot
+PS1+="\n $COLOR_GRAY -\$ $COLOR_NEUTRAL"
+
+export PS1
+
 # shorterns path; requires Bash Version > 4.0 
 export PROMPT_DIRTRIM=3
 
