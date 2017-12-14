@@ -34,7 +34,12 @@ COLOR_NEUTRAL="\[\033[m\]"
 COLOR_RED="\[\033[0;31m\]"
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+parse_git_status() {
+	git_status="$(git status 2> /dev/null)"
+	if [[ ! ${git_status} =~ "working tree clean" ]]; then echo ' *'; fi
 }
 
 
@@ -44,10 +49,10 @@ PS1="$COLOR_GREEN\u$COLOR_NEUTRAL@"
 PS1+="${COLOR_YELLOW}happy:"
 # add current directory
 PS1+="$COLOR_BLUE\w"
+# git status color
+PS1+="$COLOR_RED\$(parse_git_status)"
 # git branch
 PS1+="$COLOR_GRAY\$(parse_git_branch)"
-# git changes color
-PS1+=""
 # command prompot
 PS1+="\n $COLOR_GRAY -\$ $COLOR_NEUTRAL"
 
