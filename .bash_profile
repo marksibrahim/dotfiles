@@ -38,8 +38,7 @@ parse_git_branch() {
 }
 
 parse_git_status() {
-	git_status="$(git status 2> /dev/null)"
-	if [[ ! ${git_status} =~ "working tree clean" ]]; then echo ' *'; fi
+	 [[ -n "$(git status -s 2> /dev/null)" ]] && echo " *"
 }
 
 
