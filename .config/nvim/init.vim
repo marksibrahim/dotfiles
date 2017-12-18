@@ -7,7 +7,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 "===========================Plugins (via vim-plug)=========================
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/nvim-plugins-plug/')
 
 " Declare the list of plugins.
 Plug 'scrooloose/nerdtree' " File Navigation Tree
