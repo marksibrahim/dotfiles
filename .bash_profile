@@ -10,6 +10,11 @@ else
 fi
 
 #===========================ALIASES===============================
+# faster cd
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../../"
+
 # vacc shortcut
 alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
 
