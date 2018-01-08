@@ -84,3 +84,15 @@ let g:airline_powerline_fonts = 1 " use symbols for airline
 set laststatus=2 " airline appears all the time
 
 set hidden " Leave hidden buffers open  
+
+"===========================LaTex=========================
+" compile
+" explanation: 
+"       silent: prevents need to hit enter
+"       redraw! : redraws screen (must be outside of quotes to work)
+"       latexmk: tool for compilation (as many times as necessary to resolve
+"       bib tex conflicts
+command! L execute "silent w | silent !latexmk -xelatex %" | execute "silent !latexmk -c %" | redraw!
+" Shortcut to compile
+nnoremap <C-T> :L<CR>
+
