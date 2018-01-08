@@ -18,6 +18,7 @@ Plug 'sheerun/vim-polyglot' "Syntax and indentation for most languages
 Plug 'altercation/vim-colors-solarized' " Solarized colors
 Plug 'bling/vim-airline' " nice status line at bottom of screen (and buffers)
 Plug 'vim-airline/vim-airline-themes' " color themes for airline status line
+Plug 'gregsexton/MatchTag' " html highlight matching tags
 
 Plug 'Shougo/deoplete.nvim' " async autocompletion
 Plug 'ervandew/supertab' " activate autocompletion with <Tab>
