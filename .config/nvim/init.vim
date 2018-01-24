@@ -76,7 +76,7 @@ set wildmenu
 
 "===========================Visuals=========================
 colorscheme solarized
-set background=light
+set background=dark
 
 let g:airline#extensions#tabline#enabled = 1 " show buffers top bar
 let g:airline_theme='solarized' " sets airline to solarized theme
