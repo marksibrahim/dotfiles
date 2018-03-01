@@ -26,6 +26,7 @@ alias path='echo -e \\t${PATH//:/\\n\\t}' #displays path in a nice format (from 
 
 # Serve Jekyll Blog
 alias serve_blog="jekyll serve --baseurl ''"
+alias serve_blog_drafts="jekyll serve --drafts --baseurl ''"
 
 # open current directory in Intellij
 alias intellij="open -a /Applications/IntelliJ\ IDEA.app/ ."
@@ -105,6 +106,7 @@ export PATH=/usr/local/bin:$PATH
 
 # virtual environment wrapper
 export WORKON_HOME=~/Envs
+export VIRTUALENVWRAPPER_PYTHON=python3
 source /usr/local/bin/virtualenvwrapper.sh
 
 
