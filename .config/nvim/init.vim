@@ -22,7 +22,7 @@ Plug 'gregsexton/MatchTag' " html highlight matching tags
 
 Plug 'Shougo/deoplete.nvim' " async autocompletion
 Plug 'ervandew/supertab' " activate autocompletion with <Tab>
-Plug 'w0rp/ale' " async linter supporting most languages
+Plug 'w0rp/ale' " async linter supporting most languages (be sure to install linters!)
 
 " List ends here. Plugins become visible to Vim after this call.
 " Brief help
@@ -49,12 +49,6 @@ set smartcase
 " Spell-check Markdown files
 autocmd FileType markdown setlocal spell
 
-" Python linter configuration for ALE
-" disable PyLint
-let g:ale_linters = {
-\   'python': ['pylint'],
-\}
-
 "===========================Multiple Files=========================
 " Search text across files <command-shift-f>, equivalent to :Ack 'word' 
 nmap <C-f> :Ack<space>
@@ -79,6 +73,7 @@ colorscheme solarized
 set background=dark
 
 let g:airline#extensions#tabline#enabled = 1 " show buffers top bar
+let g:airline#extensions#ale#enabled = 1 " linter uses airline to display errors
 let g:airline_theme='solarized' " sets airline to solarized theme
 let g:airline_powerline_fonts = 1 " use symbols for airline
 set laststatus=2 " airline appears all the time
