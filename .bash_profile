@@ -99,14 +99,17 @@ HISTCONTROL="erasedups:ignoreboth"
 # Save multi-line commands as one command
 shopt -s cmdhist
 
-#===========================OTHER===============================
+#===========================PYTHON===============================
 # Homebrew installs applications in usr/local/bin
 	#tell OS to use programs in this directory
 export PATH=/usr/local/bin:$PATH
 
-# virtual environment wrapper
-export WORKON_HOME=~/Envs
-export VIRTUALENVWRAPPER_PYTHON=python3
-source /usr/local/bin/virtualenvwrapper.sh
+# pyenv for running specific python version
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# initialize pyenv in shell
+if command -v pyenv 1>/dev/null 2>&1; then  
+	eval "$(pyenv init -)"
+fi
 
-
+#===========================OTHER===============================
