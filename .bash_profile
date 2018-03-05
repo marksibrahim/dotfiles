@@ -110,6 +110,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # initialize pyenv in shell
 if command -v pyenv 1>/dev/null 2>&1; then  
 	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
 fi
 # show virtualenv changes in prompt
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
