@@ -13,6 +13,7 @@ Thumbs.db
 # Compiled Python files
 *.pyc
 .mypy_cache
+.cache
 
 # Compiled C++ files
 *.out
