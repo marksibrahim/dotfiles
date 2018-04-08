@@ -24,6 +24,9 @@ Plug 'Shougo/deoplete.nvim' " async autocompletion
 Plug 'ervandew/supertab' " activate autocompletion with <Tab>
 Plug 'w0rp/ale' " async linter supporting most languages (be sure to install linters!)
 
+Plug 'xolox/vim-notes' " wiki-style markdown notes
+Plug 'xolox/vim-misc' " required for vim-notes
+
 " List ends here. Plugins become visible to Vim after this call.
 " Brief help
 	"  PlugInstall - install plugins listed above
@@ -91,3 +94,15 @@ command! L execute "silent w | silent !latexmk -xelatex %" | execute "silent !la
 " Shortcut to compile
 nnoremap <C-T> :L<CR>
 
+"===========================Notes=========================
+let g:notes_directories = ['~/Dropbox/Notes/vim_notes']
+function! Notes()
+    set laststatus=0 " get rid of bottom airline bar
+    set background=light
+    set spell spelllang=en_us
+    " j, k move up/down visual lines
+    map j gj
+    map k gk
+    :Note Contents
+endfunction
+nnoremap <silent> <leader>t :call Notes()<cr>
