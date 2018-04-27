@@ -39,9 +39,7 @@ set expandtab           " Insert spaces when TAB is pressed.
 set tabstop=4           " Render TABs using this many spaces.
 set shiftwidth=4        " Indentation amount for < and > commands.
 " tab width 2 for css, html, javascript
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html,css,javascript setlocal shiftwidth=2 tabstop=2
 
 " Enable mouse mode
 set mouse=a
