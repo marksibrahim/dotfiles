@@ -14,6 +14,7 @@ Thumbs.db
 *.pyc
 .mypy_cache
 .cache
+.ipynb_checkpoints
 
 # Compiled C++ files
 *.out
