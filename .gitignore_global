@@ -15,6 +15,7 @@ Thumbs.db
 .mypy_cache
 .cache
 .pytest_cache
+.ipynb_checkpoints
 
 # Compiled C++ files
 *.out
