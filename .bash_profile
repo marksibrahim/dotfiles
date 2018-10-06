@@ -83,7 +83,7 @@ preview_md() {
 
 
 #===========================COMPLETION===============================
-# git completion
+# git completion (for $ brew install git bash-completion)
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
     fi
