@@ -93,7 +93,7 @@ set hidden " Leave hidden buffers open
 " explanation: 
 "       latexmk: tool for compilation (as many times as necessary to resolve
 "       bib tex conflicts)
-command! L execute "w | !latexmk -xelatex %" | execute "!latexmk -c %"
+command! L execute "w | !latexmk -xelatex -bibtex %" | execute "!latexmk -c %"
 " Shortcut to compile
 nnoremap <C-T> :L<CR>
 
