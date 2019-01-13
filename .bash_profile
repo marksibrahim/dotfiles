@@ -25,8 +25,8 @@ alias rm="rm -i" #ask for confirmation before rm
 alias path='echo -e \\t${PATH//:/\\n\\t}' #displays path in a nice format (from Bagrow/Andy)
 
 # Serve Jekyll Blog
-alias serve_blog="jekyll serve --baseurl ''"
-alias serve_blog_drafts="jekyll serve --drafts --baseurl ''"
+alias serve_blog="jekyll serve --baseurl '' --watch --incremental"
+alias serve_blog_drafts="jekyll serve --drafts --baseurl '' --watch --incremental"
 
 # open current directory in Intellij
 alias intellij="open -a /Applications/IntelliJ\ IDEA.app/ ."
