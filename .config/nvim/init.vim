@@ -56,6 +56,7 @@ set smartcase
 
 " Spell-check Markdown files
 autocmd FileType markdown setlocal spell
+autocmd FileType tex setlocal spell
 
 "===========================Multiple Files=========================
 " Search text across files <command-shift-f>, equivalent to :Ack 'word' 
