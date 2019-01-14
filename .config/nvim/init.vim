@@ -65,7 +65,7 @@ nmap <C-f> :Ack<space>
 " Switch buffers using Tab (and Shift Tab)
 	" Remember Ctrl-P also can search buffers
 nnoremap <Tab> :bnext<CR>
-nnoremap <Tab> :bprevious<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 " Split screen navigation
     " Switch Windows (which are a view into a buffer)
