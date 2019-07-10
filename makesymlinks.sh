@@ -29,5 +29,8 @@ for file in $files; do
     ln -s $dir/$file ~/$file
 done
 
+# Create empty nvim config (otherwise symlink doesn't work)
+mkdir ~/.config/nvim
+
 # Configure git to use gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
