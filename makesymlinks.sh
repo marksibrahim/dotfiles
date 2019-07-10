@@ -7,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bash_profile .vimrc .vim .config .gitignore_global"    # list of files/folders to symlink in homedir
+files=".bash_profile .vimrc .vim .config/nvim .gitignore_global"    # list of files/folders to symlink in homedir
 
 ##########
 
