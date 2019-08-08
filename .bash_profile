@@ -1,6 +1,9 @@
 # .bash_profile
 # Get the aliases and functions
-source ~/.bashrc
+if [ -f $HOME/.bashrc ]; then
+    source ~/.bashrc
+fi
+
 
 # Source .specifics (for machine specific configs) if it exists
 if [ -f $HOME/.specifics ]; then
@@ -124,3 +127,8 @@ if [ -f '/Users/mark/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mark/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mark/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+# BEGIN: Block added by chef, to set environment strings
+# Please see https://fburl.com/AndroidProvisioning if you do not use bash
+# or if you would rather this bit of code 'live' somewhere else
+. ~/.fbchef/environment
+# END: Block added by chef

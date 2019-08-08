@@ -1,4 +1,4 @@
-.config/nvim/plugged#!/bin/bash
+#!/bin/bash
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 # Run using: sh makesymlinks.sh
@@ -16,21 +16,27 @@ echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-# change to the dotfiles directory
+# Create empty nvim config (otherwise symlink doesn't work)
+mkdir -p ~/.config/nvim
+
+# Change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# Move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/$file $olddir
+    if [[ -d $file ]]; then
+        # If directory, create a new one to be symlinked
+        mv ~/$file $olddir
+        mkdir -p $file
+    else
+        mv ~/$file $olddir
+    fi
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
-
-# Create empty nvim config (otherwise symlink doesn't work)
-mkdir ~/.config/nvim
 
 # Configure git to use gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
