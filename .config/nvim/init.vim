@@ -23,6 +23,7 @@ Plug 'gregsexton/MatchTag' " html highlight matching tags
 Plug 'Shougo/deoplete.nvim' " async autocompletion
 Plug 'ervandew/supertab' " activate autocompletion with <Tab>
 Plug 'w0rp/ale' " async linter supporting most languages (be sure to install linters!)
+Plug 'ambv/black' " black formatting for Python
 
 Plug 'xolox/vim-notes' " wiki-style markdown notes
 Plug 'xolox/vim-misc' " required for vim-notes
