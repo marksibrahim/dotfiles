@@ -1,10 +1,5 @@
 " neovim settings
 
-" link to Python
-" strangely you need to install neovim via pip2, pip3, and brew!
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
-
 "===========================Plugins (via vim-plug)=========================
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/nvim-plugins-plug/')
