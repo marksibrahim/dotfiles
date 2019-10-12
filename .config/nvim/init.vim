@@ -18,7 +18,6 @@ Plug 'gregsexton/MatchTag' " html highlight matching tags
 Plug 'Shougo/deoplete.nvim' " async autocompletion
 Plug 'ervandew/supertab' " activate autocompletion with <Tab>
 Plug 'w0rp/ale' " async linter supporting most languages (be sure to install linters!)
-Plug 'ambv/black' " black formatting for Python
 
 Plug 'xolox/vim-notes' " wiki-style markdown notes
 Plug 'xolox/vim-misc' " required for vim-notes
@@ -53,6 +52,9 @@ set smartcase
 " Spell-check Markdown files
 autocmd FileType markdown setlocal spell
 autocmd FileType tex setlocal spell
+
+" Persistent undo history across sessions
+set undofile
 
 "===========================Multiple Files=========================
 " Search text across files <command-shift-f>, equivalent to :Ack 'word' 
