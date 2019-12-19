@@ -68,7 +68,17 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(rails
+    git
+    ruby
+    pyenv
+    python
+    brew
+    vscode
+    z
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,15 +112,3 @@ alias lf="ls -AlFGh"
 # initialize pyenv in shell
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-plugins=(rails
-    git
-    ruby
-    pyenv
-    python
-    brew
-    vscode
-    z
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-)

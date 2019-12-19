@@ -18,7 +18,7 @@ alias ....="cd ../../../"
 # vacc shortcut
 alias vacc="ssh msibrahi@bluemoon-user1.uvm.edu"
 
-# useful 
+# useful
 alias cpwd="pwd | tr -d '\n' | pbcopy" #copy current working directory
 alias lf="ls -AlFGh"
 alias rm="rm -i" #ask for confirmation before rm
@@ -63,7 +63,7 @@ PS1+="\n $COLOR_GRAY -\$ $COLOR_NEUTRAL"
 
 export PS1
 
-# shorterns path; requires Bash Version > 4.0 
+# shorterns path; requires Bash Version > 4.0
 export PROMPT_DIRTRIM=3
 
 #adds directory to title bar of iterm
@@ -73,7 +73,7 @@ fi
 
 
 #===========================PREVIEW MARKDOWN===============================
-# uses Pandoc and styles in github_md.css 
+# uses Pandoc and styles in github_md.css
 # alias preview_md="pandoc -o md_preview.html --from markdown_github --to html -c ~/dotfiles/github_md.css README.md && open md_preview.html && sleep 2 && rm -f md_preview.html"
 
 preview_md() {
@@ -109,7 +109,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 # initialize pyenv in shell
-if command -v pyenv 1>/dev/null 2>&1; then  
+if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
 fi
@@ -121,11 +121,6 @@ if [ -f '/Users/mark/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mark/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/mark/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-# BEGIN: Block added by chef, to set environment strings
-# Please see https://fburl.com/AndroidProvisioning if you do not use bash
-# or if you would rather this bit of code 'live' somewhere else
-. ~/.fbchef/environment
-# END: Block added by chef
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
@@ -138,4 +133,3 @@ if [ -f $HOME/.specifics ]; then
 else
    echo "no machine specific bash configs to source"
 fi
-
