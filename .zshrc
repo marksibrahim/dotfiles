@@ -75,9 +75,6 @@ plugins=(rails
     python
     brew
     vscode
-    z
-    zsh-syntax-highlighting
-    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
