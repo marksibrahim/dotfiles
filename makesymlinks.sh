@@ -2,12 +2,12 @@
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 # Run using: sh makesymlinks.sh
-###################################### 
+######################################
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bash_profile .vimrc .vim .config/nvim .gitignore_global"    # list of files/folders to symlink in homedir
+files=".bash_profile .zshrc .vimrc .vim .config/nvim .gitignore_global"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -24,7 +24,7 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# Move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# Move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     if [[ -d $file ]]; then

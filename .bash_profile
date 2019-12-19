@@ -4,17 +4,10 @@ if [ -f $HOME/.bashrc ]; then
     source ~/.bashrc
 fi
 
-
-# Source .specifics (for machine specific configs) if it exists
-if [ -f $HOME/.specifics ]; then
-    source $HOME/.specifics
-else
-   echo "no machine specific bash configs to source"
-fi
-
 # Set nvim as editor for git and other terminal programs
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
 
 #===========================ALIASES===============================
 # faster cd
@@ -114,6 +107,7 @@ export PATH=/usr/local/bin:$PATH
 # pyenv for running specific python version
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
 # initialize pyenv in shell
 if command -v pyenv 1>/dev/null 2>&1; then  
 	eval "$(pyenv init -)"
@@ -132,3 +126,16 @@ if [ -f '/Users/mark/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '
 # or if you would rather this bit of code 'live' somewhere else
 . ~/.fbchef/environment
 # END: Block added by chef
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+# Source .specifics (for machine specific configs) if it exists
+if [ -f $HOME/.specifics ]; then
+    source $HOME/.specifics
+else
+   echo "no machine specific bash configs to source"
+fi
+
