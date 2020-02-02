@@ -75,6 +75,12 @@ plugins=(
     python
     brew
     vscode
+    colored-man-pages 
+    colorize 
+    pip 
+    osx 
+    zsh-syntax-highlighting 
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
