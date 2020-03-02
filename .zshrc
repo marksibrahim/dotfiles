@@ -113,3 +113,10 @@ alias lf="ls -AlFGh"
 # initialize pyenv in shell
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Source .specifics (for machine specific configs) if it exists
+if [ -f $HOME/.specifics ]; then
+    source $HOME/.specifics
+else
+   echo "no machine specific bash configs to source"
+fi
