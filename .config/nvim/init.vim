@@ -56,6 +56,19 @@ autocmd FileType tex setlocal spell
 " Persistent undo history across sessions
 set undofile
 
+" Disable use of clipboard for deleting
+xnoremap c "_c
+xnoremap x "_x
+xnoremap d "_d
+
+xnoremap C "_C
+xnoremap X "_X
+xnoremap D "_D
+
+
+" Use system clipboard
+set clipboard^=unnamed,unnamedplus
+
 "===========================Multiple Files=========================
 " Search text across files <command-shift-f>, equivalent to :Ack 'word' 
 nmap <C-f> :Ack<space>
