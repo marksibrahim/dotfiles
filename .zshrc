@@ -120,3 +120,10 @@ if [ -f $HOME/.specifics ]; then
 else
    echo "no machine specific bash configs to source"
 fi
+
+# Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+# Iterm2 integration
+source ~/.iterm2_shell_integration.zsh
+
