@@ -79,8 +79,15 @@ plugins=(
     colorize 
     pip 
     osx 
+    autojump
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
+# Vi Mode escape key
+ZVM_VI_ESCAPE_BINDKEY=kj
+
+# Must be after plugins are sourced
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
