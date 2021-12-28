@@ -69,11 +69,14 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lf="ls -AlFGh"
+alias ga="git add -v  ."
 alias gpo="git push origin"
 
 # initialize pyenv in shell
-eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # Source .specifics (for machine specific configs) if it exists
 if [ -f $HOME/.specifics ]; then
