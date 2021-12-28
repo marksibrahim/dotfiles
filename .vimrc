@@ -30,12 +30,7 @@ Plugin 'derekwyatt/vim-scala' " for scala syntax highlighting
 Plugin 'https://github.com/bling/vim-airline' " nice status line at bottom of screen
 Plugin 'vim-airline/vim-airline-themes' " color themes for airline status line
 Plugin 'https://github.com/jszakmeister/vim-togglecursor' " change cursor shape in insert mode
-
-Plugin 'https://github.com/xolox/vim-misc' " Required by Vim Notes (below)
-Plugin 'https://github.com/xolox/vim-notes' " Note Taking
-
 Plugin 'https://github.com/LaTeX-Box-Team/LaTeX-Box' " Latex 
-Plugin 'https://github.com/Valloric/MatchTagAlways' " Match HTML Tags
 
 
 " Brief help
